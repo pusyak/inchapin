@@ -1,0 +1,282 @@
+.callback-popup {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: $white;
+  pointer-events: none;
+  opacity: 0;
+
+  @include transition;
+  transition-property: opacity;
+
+  &--active {
+    z-index: 1000;
+
+    pointer-events: all;
+    opacity: 1;
+
+    transition-property: opacity;
+  }
+
+  &__close {
+    position: absolute;
+    right: 60px;
+    top: 60px;
+
+    width: 26px;
+    height: 26px;
+
+    @include transition;
+
+    @media (max-width: $laptop) {
+      right: 50px;
+      top: 50px;
+    }
+
+    @media (max-width: $tablet) {
+      right: 40px;
+      top: 40px;
+    }
+
+    @media (max-width: $mobile) {
+      right: 20px;
+      top: 20px;
+    }
+
+    svg {
+
+      path {
+        transition: .3s;
+      }
+    }
+
+    &:hover {
+      transform: scale(1.1);
+
+      svg {
+
+        path {
+          stroke: red;
+        }
+      }
+    }
+  }
+
+  &__container {
+    max-width: 454px;
+    width: 100%;
+
+    @media (min-width: $desktop) {
+      max-width: 587px;
+    }
+
+    @media (max-width: $laptop) {
+      max-width: 370px;
+    }
+
+    @media (max-width: $tablet) {
+      max-width: 438px;
+    }
+
+    @media (max-width: $mobile) {
+      max-width: 360px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
+  &__title {
+    display: block;
+
+    text-align: center;
+    font-size: 40px;
+    line-height: 1.2;
+    text-transform: uppercase;
+
+    @media (min-width: $desktop) {
+      font-size: 52px;
+    }
+
+    @media (max-width: $laptop) {
+      font-size: 28px;
+      line-height: 1.4;
+    }
+
+    @media (max-width: $mobile) {
+      padding-left: 10px;
+
+      font-size: 20px;
+      text-align: left;
+    }
+  }
+
+  &__form {
+    margin-top: 50px;
+
+    @media (min-width: $desktop) {
+      margin-top: 80px;
+    }
+
+    @media (max-width: $mobile) {
+      margin-top: 30px;
+    }
+  }
+
+  &__input-container {
+    position: relative;
+
+    margin-bottom: 41px;
+
+    @media (min-width: $desktop) {
+      margin-bottom: 49px;
+    }
+
+    @media (max-width: $laptop) {
+      margin-bottom: 45px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__placeholder {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    font-size: 16px;
+    line-height: 1.6;
+    text-transform: uppercase;
+
+    pointer-events: none;
+
+    transform-origin: left;
+    @include transition;
+
+    &--active {
+      transform: translateY(-100%) scale(.8);
+    }
+
+    @media (min-width: $desktop) {
+      font-size: 17px;
+    }
+
+    @media (max-width: $laptop) {
+      font-size: 14px;
+    }
+
+    @media (max-width: $mobile) {
+      font-size: 11px;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    height: 30px;
+
+    font-size: 16px;
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+    @media (min-width: $desktop) {
+      font-size: 17px;
+    }
+
+    @media (max-width: $laptop) {
+      height: 26px;
+
+      font-size: 14px;
+    }
+
+    @media (max-width: $mobile) {
+      height: 21px;
+
+      font-size: 11px;
+    }
+
+    &:focus + span {
+      transform: translateY(-100%) scale(.8);
+    }
+  }
+
+  &__agreement {
+    display: block;
+    width: 90%;
+    margin: 50px auto 0;
+
+    font-size: 12px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.5);
+
+    @media (min-width: $desktop) {
+      width: 75%;
+
+      font-size: 14px;
+    }
+
+    @media (max-width: $laptop) {
+      width: auto;
+    }
+
+    @media (max-width: $tablet) {
+      width: 90%;
+    }
+
+    @media (max-width: $mobile) {
+      margin-top: 40px;
+    }
+
+    a {
+      position: relative;
+
+      color: rgba(0, 0, 0, 0.5);
+      text-decoration: underline;
+
+      @include transition;
+      transition-property: opacity;
+
+      &:hover {
+        opacity: .5;
+      }
+    }
+  }
+
+  &__submit {
+    margin: 30px auto 0;
+    display: flex;
+    padding: 24px 69px;
+
+    font-family: $nova-semi-bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    line-height: 1;
+    letter-spacing: .98px;
+    color: $white;
+
+    border-radius: 100px;
+    background: $blue;
+
+    @media (min-width: $desktop) {
+      font-size: 15px;
+    }
+
+    @media (max-width: $laptop) {
+      padding: 20px 40px;
+    }
+
+    @media (max-width: $mobile) {
+      margin-top: 20px;
+      padding: 18px 50px;
+
+      font-size: 11px;
+    }
+  }
+}

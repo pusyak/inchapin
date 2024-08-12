@@ -1,0 +1,247 @@
+.header {
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  @media (max-width: $tablet) {
+    background-color: $white;
+  }
+
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 29px;
+    padding-bottom: 28px;
+
+    background-color: $white;
+
+    @media (min-width: $desktop) {
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+
+    @media (max-width: $laptop) {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+
+    @media (max-width: $tablet) {
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+
+    @media (max-width: $mobile) {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+  }
+
+  &__column {
+    display: flex;
+    align-items: center;
+
+    &--centered {
+      position: absolute;
+      left: 0;
+      right: 0;
+
+      width: 100%;
+      justify-content: center;
+
+      pointer-events: none;
+    }
+
+    @media (max-width: $tablet) {
+      width: 100%;
+
+      &:last-child {
+        display: none;
+      }
+    }
+  }
+
+  &__menu-button {
+    display: inline-flex;
+    align-items: center;
+
+    font-family: $nova-semi-bold;
+    text-transform: uppercase;
+    font-size: 13px;
+
+    @media (min-width: $desktop) {
+      font-size: 15px;
+    }
+
+    @media (max-width: $laptop) {
+      font-size: 12px;
+    }
+
+    svg {
+      height: 22px;
+
+      @media (min-width: $desktop) {
+        width: 37px;
+        height: auto;
+      }
+
+      @media (max-width: $mobile) {
+        width: 29px;
+        height: auto;
+      }
+
+      rect {
+        @include transition;
+
+        @media (max-width: $mobile) {
+          fill: #000;
+        }
+      }
+    }
+
+    span {
+      margin-left: 12px;
+
+      @media (min-width: $desktop) {
+        margin-left: 15px;
+      }
+
+      @media (max-width: $laptop) {
+        margin-left: 10px;
+      }
+
+      @media (max-width: $mobile) {
+        display: none;
+      }
+    }
+
+    &:hover {
+
+      svg {
+        overflow: visible;
+
+        rect {
+
+          &:first-child {
+            transform: translateY(-2px);
+
+            @media (max-width: $mobile) {
+              transform: translateY(-1px);
+            }
+          }
+
+          &:last-child {
+            transform: translateY(2px);
+
+            @media (max-width: $mobile) {
+              transform: translateY(1px);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__pick-button {
+    margin-left: 40px;
+
+    @media (min-width: $desktop) {
+      margin-left: 43px;
+    }
+
+    @media (max-width: $laptop) {
+      margin-left: 25px;
+    }
+
+    @media (max-width: $tablet) {
+      margin-left: auto;
+    }
+
+    @media (max-width: $mobile) {
+      display: none;
+    }
+  }
+
+  &__logo {
+    pointer-events: all;
+
+    svg {
+    }
+  }
+
+  &__phone {
+    position: relative;
+
+    font-family: $nova-semi-bold;
+    font-size: 14px;
+    color: $black;
+
+    @media (min-width: $desktop) {
+      font-size: 17px;
+    }
+
+    @media (max-width: $laptop) {
+      font-size: 13px;
+    }
+
+    @media (max-width: $tablet) {
+      display: none;
+    }
+
+    &:after {
+      content: '';
+
+      position: absolute;
+      left: 0;
+      bottom: 0;
+
+      width: 100%;
+      height: 1px;
+
+      background-color: $black;
+
+      transform: scaleX(0);
+      transform-origin: center;
+
+      @include transition;
+    }
+
+    &:hover {
+      &:after {
+        transform: scaleX(1);
+      }
+    }
+  }
+
+  &__callback-button {
+    margin-left: 40px;
+
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: .86px;
+    font-family: $nova-semi-bold;
+
+    @media (min-width: $desktop) {
+      margin-left: 45px;
+
+      font-size: 15px;
+      letter-spacing: 1px;
+    }
+
+    @media (max-width: $laptop) {
+      margin-left: 25px;
+
+      font-size: 12px;
+    }
+
+    @media (max-width: $tablet) {
+      margin-left: 62px;
+    }
+
+    @media (max-width: $mobile) {
+      margin-left: auto;
+    }
+  }
+}

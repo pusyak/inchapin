@@ -1,0 +1,115 @@
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: $nova-regular;
+	font-size: 14px;
+	color: $black;
+
+	@media (max-width: $laptop) {
+		font-size: 13px;
+	}
+}
+
+#scrollbar {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+
+	overflow: hidden;
+}
+
+.container {
+	max-width: 1440px;
+	width: 100%;
+	margin: 0 auto;
+	padding-left: 40px;
+	padding-right: 40px;
+
+	@media (min-width: $desktop) {
+		max-width: none;
+		padding-left: 80px;
+		padding-right: 80px;
+	}
+
+	@media (max-width: $laptop) {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+
+	@media (max-width: $tablet) {
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+
+	@media (max-width: $mobile) {
+		padding-right: 20px;
+		padding-left: 20px;
+	}
+}
+
+.h2-title {
+	font-size: 26px;
+	line-height: 1.4;
+	text-transform: uppercase;
+
+	@media (max-width: $laptop) {
+		font-size: 19px;
+	}
+}
+
+.h3-title {
+	font-size: 16px;
+	line-height: 1.6;
+	text-transform: uppercase;
+
+	@media (max-width: $laptop) {
+		font-size: 12px;
+		line-height: 1.8;
+	}
+}
+
+.blue-text {
+	color: $blue;
+}
+
+.logo {
+	padding: 8px;
+	display: flex;
+	align-items: center;
+
+	@media (max-width: $mobile) {
+		padding-bottom: 10px;
+	}
+
+	svg {
+		@media (min-width: $desktop) {
+			min-width: 187px;
+		}
+
+		@media (max-width: $mobile) {
+			height: 21px;
+		}
+	}
+
+	#top-stick {
+		@include transition
+	}
+
+	&:hover {
+		#top-stick {
+			transform: translateY(17px);
+		}
+	}
+}
+
+.show-from-tablet {
+	display: none;
+
+	@media (max-width: $tablet) {
+		display: flex;
+	}
+}
