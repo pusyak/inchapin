@@ -5,10 +5,6 @@
   height: 100vh;
   padding-top: 100px;
 
-  @supports (-webkit-touch-callout: none) {
-    height: -webkit-fill-available;
-  }
-
   @media (min-width: $desktop) {
     padding-top: 131px;
   }
@@ -22,6 +18,7 @@
   }
 
   @media (max-width: $mobile) {
+    height: 100dvh;
     padding-top: 81px;
   }
 
