@@ -3,8 +3,11 @@
   flex-direction: column;
   justify-content: space-between;
   height: 100vh;
-  height: -webkit-fill-available;
   padding-top: 100px;
+
+  @supports (-webkit-touch-callout: none) {
+    height: -webkit-fill-available;
+  }
 
   @media (min-width: $desktop) {
     padding-top: 131px;
